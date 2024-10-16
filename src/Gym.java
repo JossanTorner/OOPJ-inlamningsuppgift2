@@ -2,6 +2,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 
 public class Gym {
@@ -34,7 +35,7 @@ public class Gym {
         try{
             members = fileHandler.getMembersFromFile(gymData);
         }
-        catch(ParseException | IOException e){
+        catch(DateTimeParseException | IOException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
@@ -45,7 +46,7 @@ public class Gym {
         try{
             fileHandler.getVisitsFromFile(visitLog, members);
         }
-        catch(ParseException | IOException e){
+        catch(DateTimeParseException | IOException e){
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
